@@ -61,7 +61,7 @@ public class FullAdder {
         Gate gate4=new Gate(lut_g4); 
         Gate gate5=new Gate(lut_g5);
        
-        //applies circuit with test input values
+
         byte[] ret1=gate1.operate(in_b, in_a);
         byte[] ret2=gate2.operate(in_c, ret1);
         byte[] ret3=gate3.operate(in_b, in_a);
