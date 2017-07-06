@@ -18,7 +18,7 @@ public class Main {
                 f1.getCircuit();
                 
                 
-                boolean FA_abc_result[]= f1.evaluate(FA_ab_result[1], false, true); //Sj + d
+                boolean FA_abc_result[]= f1.evaluate(FA_ab_result[1], false, true); 
   
                 System.out.println("");
                 System.out.print("result of 3-integer Full Adder: ");
@@ -33,13 +33,13 @@ public class Main {
                 f.getCircuit();
                 
                 
-                boolean ab_result= f.evaluate(true, true, true); // a comp b
+                boolean ab_result= f.evaluate(true, true, true); 
                 
                 
                 f.getCircuit();
                 
                
-                boolean abc_result= f.evaluate(ab_result, false, true); //a comp b comp d
+                boolean abc_result= f.evaluate(ab_result, false, true); 
                 
                 
                 System.out.println("");
