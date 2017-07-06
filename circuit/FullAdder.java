@@ -17,28 +17,27 @@ public class FullAdder {
      
      public void getCircuit() throws Exception {
         System.out.println("Generate Full Adder Circuit");
-         
-        //3-Wire inputs a, b, c
+
         a=new Wire();
 	b=new Wire();
         c=new Wire();
         
-         //5-Wire outputs 
+
         r1=new Wire();
         r2=new Wire();
         r3=new Wire();
         r4=new Wire();
         r5=new Wire();
         
-        //Gates of the Yao Garbled Circuit
+
         Gate g1=new XorGate(a,b,r1);
         Gate g2=new XorGate(r1,c,r2);
         Gate g3=new AndGate(a,b,r3);
         Gate g4=new AndGate(c,r1,r4);
         Gate g5=new OrGate(r3,r4,r5);
-        //results in r2, r5
+
         
-        //encrypted output from the Gates
+
         lut_g1=g1.getLut();
         lut_g2=g2.getLut();
         lut_g3=g3.getLut();
@@ -55,7 +54,7 @@ public class FullAdder {
         byte[] in_b=(b_input?b.getValue1():b.getValue0());
         byte[] in_c=(c_input?c.getValue1():c.getValue0());
         
-        //Gates in B's side using A's encrypted output
+    
         Gate gate1=new Gate(lut_g1);
         Gate gate2=new Gate(lut_g2);
         Gate gate3=new Gate(lut_g3);         
@@ -72,13 +71,13 @@ public class FullAdder {
        
         boolean [] results= new boolean[2];
         
-        //returns Carrier bit (Cj): true for 1, false for 0
+      
        if(Utils.arraysAreEqual(ret2,r2.getValue0()))
 	    results[0]= false;
        else if(Utils.arraysAreEqual(ret2,r2.getValue1()))
 	    results[0]= true;
        
-        //returns Partial Sum (Sj) bit: true for 1, false for 0
+ 
         if(Utils.arraysAreEqual(ret5,r5.getValue0()))
             results[1]= false;
        else if(Utils.arraysAreEqual(ret5,r5.getValue1())) 
