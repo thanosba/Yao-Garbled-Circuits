@@ -87,11 +87,10 @@ public class Utils
 	public static KeyPair genRSAkeypair() throws Exception
 	{
 		KeyPairGenerator kpg = KeyPairGenerator.getInstance("RSA");
-		//kpg.initialize(128);
+		
                 kpg.initialize(512);
 		KeyPair kp = kpg.genKeyPair();
-//		Key publicKey = kp.getPublic();
-//		Key privateKey = kp.getPrivate();
+		
 		return kp;
 	}
 	
@@ -157,13 +156,13 @@ public class Utils
 				md.reset();
 				md.update(in_a1);
 				md.update(in_a2);
-		        // md.update( int ) processes only the low order 8-bits. It actually expects an unsigned byte.
+		        
 		        md.digest();
 		        
 		        md.reset();
 				md.update(in_a1);
 				md.update(in_a2);
-		        // md.update( int ) processes only the low order 8-bits. It actually expects an unsigned byte.
+		        
 		        md.digest();
 			}
 		}
