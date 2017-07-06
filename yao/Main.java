@@ -28,11 +28,7 @@ public class Main
 		Gate g2=new AndGate(b1,b2,rb);
 		Gate g3=new XorGate(ra,rb,r);
 		
-		/* ship the luts and input wires
-		 * to the untrusted evaluator
-		 * 
-		 * we want him to execute (1 XOR 0) XOR (1 AND 1)
-		 */
+		
 		byte[][] lut_g1=g1.getLut();
 		byte[][] lut_g2=g2.getLut();
 		byte[][] lut_g3=g3.getLut();
@@ -41,8 +37,7 @@ public class Main
 		byte[] in_b1=b1.getValue1();
 		byte[] in_b2=b2.getValue1();
 		
-		/* PHASE T: TRANSPORT-FORMAT
-		 * =========================*/
+		
 		
 		Utils.printLut(g1, "g1");
 		Utils.printLut(g2, "g2");
@@ -66,8 +61,7 @@ public class Main
 		byte[] r3=gate3.operate(r2, r1);
 		System.out.println("encrypted result="+Utils.getHex(r3));
 		
-		/* PHASE C: RESULT DECRYPTION (on trustes resource)
-		 * ================================================*/
+		
 		
 		if(Utils.arraysAreEqual(r3,r.getValue0()))
 			System.out.println("result is 0");
