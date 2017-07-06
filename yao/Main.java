@@ -47,11 +47,9 @@ public class Main
 		System.out.println("in_b1:"+Utils.getHex(in_b1));
 		System.out.println("in_b2:"+Utils.getHex(in_b2));
 		
+	
 		
-		/* PHASE B: EVALUATE (on untrusted resource) 
-		 * =========================================*/
-		
-		//notice that the evaluator instantiates untyped gates
+	
 		Gate gate1=new Gate(lut_g1);
 		Gate gate2=new Gate(lut_g2);
 		Gate gate3=new Gate(lut_g3);
